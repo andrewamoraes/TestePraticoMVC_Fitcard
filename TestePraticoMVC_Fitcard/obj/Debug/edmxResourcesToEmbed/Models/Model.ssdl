@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="categoriaID" />
+    </Key>
+    <Property Name="categoriaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Estabelecimento">
+    <Key>
+      <PropertyRef Name="estabelecimentoID" />
+    </Key>
+    <Property Name="estabelecimentoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoriaID" Type="int" Nullable="false" />
+    <Property Name="dataCad" Type="datetime" />
+    <Property Name="razao" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="fantasia" Type="varchar" MaxLength="150" />
+    <Property Name="CNPJ" Type="varchar" MaxLength="18" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="150" />
+    <Property Name="endereco" Type="varchar" MaxLength="350" />
+    <Property Name="cidade" Type="varchar" MaxLength="50" />
+    <Property Name="estado" Type="varchar" MaxLength="10" />
+    <Property Name="telefone" Type="varchar" MaxLength="50" />
+    <Property Name="agencia" Type="varchar" MaxLength="50" />
+    <Property Name="conta" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estabelecimento" EntityType="Self.Estabelecimento" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

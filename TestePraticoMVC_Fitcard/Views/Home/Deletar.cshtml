@@ -1,0 +1,70 @@
+﻿@model TestePraticoMVC_Fitcard.Models.Estabelecimento
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>Exclusão</h2>
+<hr />
+@using (Html.BeginForm("Deletar", "Home", FormMethod.Post, new { id = "popupForm" }))
+{
+    @Html.HiddenFor(a => a.estabelecimentoID)
+    <div class="col-md-4">
+        <label>ID#:</label>
+        <p>@Model.estabelecimentoID</p>
+    </div>
+    <div class="col-md-4">
+        <label>Categoria:</label>
+        <p>@Model.labelCategoria</p>
+    </div>
+    <div class="col-md-4">
+        <label>Data Cadastro:</label>
+        <p>@Model.dataCad</p>
+    </div>
+    <div class="col-md-12">
+        <label>Razão:</label>
+        <p>@Model.razao</p>
+    </div>
+    <div class="col-md-12">
+        <label>Fantasia:</label>
+        <p>@Model.fantasia</p>
+    </div>
+    <div class="col-md-6">
+        <label>CNPJ:</label>
+        <p>@Model.CNPJ</p>
+    </div>
+    <div class="col-md-6">
+        <label>E-mail:</label>
+        <p>@Model.email</p>
+    </div>
+    <div class="col-md-6">
+        <label>Endereço:</label>
+        <p>@Model.endereco</p>
+    </div>
+    <div class="col-md-2">
+        <label>Estado:</label>
+        <p>@Model.estado</p>
+    </div>
+    <div class="col-md-4">
+        <label>Cidade:</label>
+        <p>@Model.cidade</p>
+    </div>
+    <div class="col-md-4">
+        <label>Telefone:</label>
+        <p>@Model.telefone</p>
+    </div>
+    <div class="col-md-3">
+        <label>Agencia:</label>
+        <p>@Model.agencia</p>
+    </div>
+    <div class="col-md-5">
+        <label>Conta:</label>
+        <p>@Model.conta</p>
+    </div>
+    <div class="col-md-3">
+        <label>Status:</label>
+        <p>@Model.labelStatus</p>
+    </div>
+    <div class="col-md-9" style="padding-top:30px">
+        <input type="submit" value="Deletar" style="float:right" class="btn btn-danger" />
+    </div>
+}

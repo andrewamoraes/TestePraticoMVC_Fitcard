@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <style>
+        span.field-validation-error {
+            color: red;
+        }
+
+        div {
+            padding-top: 4px
+        }
+
+        p {
+            border-bottom: 1px dotted;
+        }
+        /*css global tabela*/
+        .full_table_list {
+            width: 200px;
+            border-collapse: collapse;
+        }
+
+            /*colocando bordas nas linhas*/
+            .full_table_list tr {
+                border: 1px black solid;
+            }
+
+                /*Definido cor das linhas pares*/
+                .full_table_list tr:nth-child(even) {
+                    background: #FFF
+                }
+
+                /*Definindo cor das Linhas impáres*/
+                .full_table_list tr:nth-child(odd) {
+                    background: #EEE
+                }
+    </style>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/jquery.maskedinput.js"></script>
+    <script src="~/Scripts/Geral.js"></script>
+    <script src="~/Scripts/jquery.validate.date.js"></script>
+</head>
+<body>
+    <div style="width:90%; margin:0 auto">
+        @RenderBody()
+    </div>
+</body>
+</html>
+

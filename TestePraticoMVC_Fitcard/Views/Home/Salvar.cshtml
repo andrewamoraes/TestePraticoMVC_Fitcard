@@ -1,0 +1,87 @@
+﻿@model TestePraticoMVC_Fitcard.Models.Estabelecimento
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>Cadastro</h2>
+<hr />
+@using (Html.BeginForm("Validar", "Home", FormMethod.Post, new { id = "popupForm", onsubmit = "return checkForm(this)" }))
+{
+    if (Model != null && Model.estabelecimentoID > 0)
+    {
+        @Html.HiddenFor(a => a.estabelecimentoID)
+    }
+    <div class="col-md-6">
+        <label>Categoria</label>
+        @Html.DropDownListFor(a => a.CategoriaID, ViewData["Categorias"] as IEnumerable<SelectListItem>, "Selecione", new { @class = "chosen-select form-control" })
+    </div>
+    <div class="col-md-6">
+        <label>Data Cadastro</label>
+        @Html.TextBoxFor(a => a.dataCad, new { @class = "form-control calendario" })
+    </div>
+    <div class="col-md-12">
+        <label>Razão</label>
+        @Html.TextBoxFor(a => a.razao, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.razao)
+    </div>
+    <div class="col-md-12">
+        <label>Fantasia</label>
+        @Html.TextBoxFor(a => a.fantasia, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.fantasia)
+    </div>
+    <div class="col-md-6">
+        <label>CNPJ</label>
+        @Html.TextBoxFor(a => a.CNPJ, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.CNPJ)
+    </div>
+    <div class="col-md-6">
+        <label>E-mail</label>
+        @Html.TextBoxFor(a => a.email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.email)
+    </div>
+    <div class="col-md-6">
+        <label>Endereço</label>
+        @Html.TextBoxFor(a => a.endereco, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.endereco)
+    </div>
+    <div class="col-md-2">
+        <label>Estado</label>
+        @Html.TextBoxFor(a => a.estado, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.estado)
+    </div>
+    <div class="col-md-4">
+        <label>Cidade</label>
+        @Html.TextBoxFor(a => a.cidade, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.cidade)
+    </div>
+    <div class="col-md-4">
+        <label>Telefone</label>
+        @Html.TextBoxFor(a => a.telefone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.telefone)
+    </div>
+    <div class="col-md-3">
+        <label>Agencia</label>
+        @Html.TextBoxFor(a => a.agencia, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.agencia)
+    </div>
+    <div class="col-md-5">
+        <label>Conta</label>
+        @Html.TextBoxFor(a => a.conta, new { @class = "form-control" })
+        @Html.ValidationMessageFor(a => a.conta)
+    </div>
+    <div class="col-md-3">
+        <label>Status</label>
+        @Html.DropDownList("status", new List<SelectListItem>
+{
+new SelectListItem {Text = "Ativo", Value="True", Selected = true},
+new SelectListItem {Text = "Inativo", Value="False"}
+}, "Selecione", new { @class = "form-control" })
+    </div>
+    <div class="col-md-9" style="padding-top:30px">
+        <input type="submit" value="Salvar" style="float:right;" class="btn btn-success" />
+    </div>
+}
+<script>
+    aplicarMascaras();
+    validarCNPJ();
+</script>
